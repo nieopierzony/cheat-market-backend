@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/nieopierzony/cheat-market-backend#readme",
   "dependencies": {
+    "dotenv": "^10.0.0",
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
