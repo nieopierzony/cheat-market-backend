@@ -3,8 +3,8 @@ services:
   redis:
     image: 'redis'
   mongo:
-    image: "mongo"
-    container_name: "mongodb"
+    image: 'mongo'
+    container_name: 'mongodb'
     environment:
       - PUID=1000
       - PGID=1000
@@ -14,8 +14,16 @@ services:
       - 27017:27017
   node-app:
     depends_on:
-      - "mongo"
-      - "redis"
-    build: .
+      - 'mongo'
+      - 'redis'
+    container_name: bas-api
+    restart: unless-stopped
+    working_dir: /usr/src
+    env_file: ./.env
+    stdin_open: true
+    tty: true
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
     ports:
-      - '3000:3000'
+      - '${PORT}:3000'

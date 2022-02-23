@@ -1,6 +1,6 @@
 FROM node:16
 
-WORKDIR /usr/src/apps/bot
+WORKDIR /usr/src/bot
 
 COPY package*.json ./
 

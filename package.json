@@ -1,17 +1,26 @@
 {
-  "name": "cheat-market-backend",
+  "name": "bas-shop-backend",
   "version": "1.0.0",
-  "description": "Backend for CheatMarket (create name)",
-  "main": "src/index.js",
+  "description": "Backend for B.A.S. shop",
+  "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon . -w src/"
+    "test": "jest --runInBand --detectOpenHandles",
+    "build": "babel src -d dist --copy-files",
+    "dev": "nodemon -L -w src --exec babel-node ."
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nieopierzony/cheat-market-backend.git"
   },
-  "keywords": [],
+  "keywords": [
+    "express",
+    "redis",
+    "mongoose",
+    "docker",
+    "swagger",
+    "babel",
+    "jest"
+  ],
   "author": "Philipp Zelisnki <philipp.zelinski@googlemail.com>",
   "license": "MIT",
   "bugs": {
@@ -19,7 +28,20 @@
   },
   "homepage": "https://github.com/nieopierzony/cheat-market-backend#readme",
   "dependencies": {
+    "@hapi/boom": "^9.1.4",
     "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-jwt": "^6.1.0",
+    "helmet": "^4.6.0",
+    "joi": "^17.4.2",
+    "mongoose": "^6.0.12",
+    "morgan": "^1.10.0",
+    "node-fetch": "^3.0.0",
+    "redis": "^3.1.2",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.1.6",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
@@ -32,7 +54,11 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-prettier": "^4.0.0",
-    "nodemon": "^2.0.14",
-    "prettier": "^2.4.1"
+    "jest": "^27.3.1",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.4.1",
+    "redis-mock": "^0.56.3",
+    "superagent": "^6.1.0",
+    "supertest": "^6.1.6"
   }
 }
